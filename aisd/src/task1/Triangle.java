@@ -13,7 +13,7 @@ public class Triangle {
 
     }
 
-    public boolean exists() {
+    public boolean exists() { //метод определяющий существует ли треугольник
         double sideAB = a.distanceTo(b);
         double sideBC = b.distanceTo(c);
         double sideAC = c.distanceTo(a);
@@ -21,7 +21,7 @@ public class Triangle {
         return (sideAB + sideAC > sideBC) && (sideAB + sideBC > sideAC) && (sideAC + sideBC > sideAB);
     }
 
-    public double getPerimeter() {
+    public double getPerimeter() { 
         double sideAB = a.distanceTo(b);
         double sideBC = b.distanceTo(c);
         double sideAC = c.distanceTo(a);
@@ -38,7 +38,7 @@ public class Triangle {
         return Math.sqrt(p*(p - sideAB)*(p - sideBC)*(p - sideAC));
     }
 
-    public boolean containsPoint(Point p) {
+    public boolean containsPoint(Point p) { //метод определяющий приндлежит ли точка Р треугольнику АВС
         double abcArea = getArea();
         double abpArea = new Triangle(a, b, p).getArea();
         double acpArea = new Triangle(a, c, p).getArea();
